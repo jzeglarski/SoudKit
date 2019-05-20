@@ -10,6 +10,11 @@
 		FD7771CD22935C680022AF30 /* SoundKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7771C322935C680022AF30 /* SoundKit.framework */; };
 		FD7771D222935C680022AF30 /* SoundKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7771D122935C680022AF30 /* SoundKitTests.swift */; };
 		FD7771D422935C680022AF30 /* SoundKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FD7771C622935C680022AF30 /* SoundKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD7771E422935C790022AF30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7771E322935C790022AF30 /* AppDelegate.swift */; };
+		FD7771E622935C790022AF30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7771E522935C790022AF30 /* ViewController.swift */; };
+		FD7771E922935C790022AF30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7771E722935C790022AF30 /* Main.storyboard */; };
+		FD7771EB22935C7A0022AF30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7771EA22935C7A0022AF30 /* Assets.xcassets */; };
+		FD7771EE22935C7A0022AF30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7771EC22935C7A0022AF30 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,13 @@
 		FD7771CC22935C680022AF30 /* SoundKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7771D122935C680022AF30 /* SoundKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundKitTests.swift; sourceTree = "<group>"; };
 		FD7771D322935C680022AF30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD7771E122935C790022AF30 /* SoundKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD7771E322935C790022AF30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FD7771E522935C790022AF30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD7771E822935C790022AF30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD7771EA22935C7A0022AF30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD7771ED22935C7A0022AF30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD7771EF22935C7A0022AF30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD7771DE22935C790022AF30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +74,7 @@
 			children = (
 				FD7771C522935C680022AF30 /* SoundKit */,
 				FD7771D022935C680022AF30 /* SoundKitTests */,
+				FD7771E222935C790022AF30 /* SoundKitExample */,
 				FD7771C422935C680022AF30 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +84,7 @@
 			children = (
 				FD7771C322935C680022AF30 /* SoundKit.framework */,
 				FD7771CC22935C680022AF30 /* SoundKitTests.xctest */,
+				FD7771E122935C790022AF30 /* SoundKitExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +105,19 @@
 				FD7771D322935C680022AF30 /* Info.plist */,
 			);
 			path = SoundKitTests;
+			sourceTree = "<group>";
+		};
+		FD7771E222935C790022AF30 /* SoundKitExample */ = {
+			isa = PBXGroup;
+			children = (
+				FD7771E322935C790022AF30 /* AppDelegate.swift */,
+				FD7771E522935C790022AF30 /* ViewController.swift */,
+				FD7771E722935C790022AF30 /* Main.storyboard */,
+				FD7771EA22935C7A0022AF30 /* Assets.xcassets */,
+				FD7771EC22935C7A0022AF30 /* LaunchScreen.storyboard */,
+				FD7771EF22935C7A0022AF30 /* Info.plist */,
+			);
+			path = SoundKitExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +170,23 @@
 			productReference = FD7771CC22935C680022AF30 /* SoundKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FD7771E022935C790022AF30 /* SoundKitExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD7771F022935C7A0022AF30 /* Build configuration list for PBXNativeTarget "SoundKitExample" */;
+			buildPhases = (
+				FD7771DD22935C790022AF30 /* Sources */,
+				FD7771DE22935C790022AF30 /* Frameworks */,
+				FD7771DF22935C790022AF30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoundKitExample;
+			productName = SoundKitExample;
+			productReference = FD7771E122935C790022AF30 /* SoundKitExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,6 +203,9 @@
 					FD7771CB22935C680022AF30 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
+					FD7771E022935C790022AF30 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 				};
 			};
 			buildConfigurationList = FD7771BD22935C680022AF30 /* Build configuration list for PBXProject "SoundKit" */;
@@ -160,6 +214,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FD7771B922935C680022AF30;
 			productRefGroup = FD7771C422935C680022AF30 /* Products */;
@@ -168,6 +223,7 @@
 			targets = (
 				FD7771C222935C680022AF30 /* SoundKit */,
 				FD7771CB22935C680022AF30 /* SoundKitTests */,
+				FD7771E022935C790022AF30 /* SoundKitExample */,
 			);
 		};
 /* End PBXProject section */
@@ -184,6 +240,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD7771DF22935C790022AF30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD7771EE22935C7A0022AF30 /* LaunchScreen.storyboard in Resources */,
+				FD7771EB22935C7A0022AF30 /* Assets.xcassets in Resources */,
+				FD7771E922935C790022AF30 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +271,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD7771DD22935C790022AF30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD7771E622935C790022AF30 /* ViewController.swift in Sources */,
+				FD7771E422935C790022AF30 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -214,6 +289,25 @@
 			targetProxy = FD7771CE22935C680022AF30 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD7771E722935C790022AF30 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD7771E822935C790022AF30 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FD7771EC22935C7A0022AF30 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD7771ED22935C7A0022AF30 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FD7771D522935C680022AF30 /* Debug */ = {
@@ -424,6 +518,42 @@
 			};
 			name = Release;
 		};
+		FD7771F122935C7A0022AF30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E53GDWMY8C;
+				INFOPLIST_FILE = SoundKitExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JohnZeglarski.SoundKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD7771F222935C7A0022AF30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E53GDWMY8C;
+				INFOPLIST_FILE = SoundKitExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JohnZeglarski.SoundKitExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -450,6 +580,15 @@
 			buildConfigurations = (
 				FD7771DB22935C680022AF30 /* Debug */,
 				FD7771DC22935C680022AF30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD7771F022935C7A0022AF30 /* Build configuration list for PBXNativeTarget "SoundKitExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD7771F122935C7A0022AF30 /* Debug */,
+				FD7771F222935C7A0022AF30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
