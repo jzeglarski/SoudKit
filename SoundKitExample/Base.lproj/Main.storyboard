@@ -1,24 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s7N-YW-Bdv">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SoundKitExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now Playing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XT-dL-bZp">
+                                <rect key="frame" x="20" y="220" width="374" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dL3-BJ-mjh">
+                                <rect key="frame" x="20" y="259" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jT2-UI-tOJ">
+                                <rect key="frame" x="149.5" y="340" width="115" height="29"/>
+                                <segments>
+                                    <segment title="Song 1"/>
+                                    <segment title="Song 2"/>
+                                </segments>
+                                <connections>
+                                    <action selector="newSongPicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="2X4-1x-N0W"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dL3-BJ-mjh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0sP-JF-tgB"/>
+                            <constraint firstItem="jT2-UI-tOJ" firstAttribute="top" secondItem="dL3-BJ-mjh" secondAttribute="bottom" constant="60" id="4g6-Ad-hdh"/>
+                            <constraint firstItem="jT2-UI-tOJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7Z5-v0-4VQ"/>
+                            <constraint firstItem="dL3-BJ-mjh" firstAttribute="top" secondItem="4XT-dL-bZp" secondAttribute="bottom" constant="10" id="E3E-LY-54t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dL3-BJ-mjh" secondAttribute="trailing" constant="20" id="PBG-Mj-tfh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4XT-dL-bZp" secondAttribute="trailing" constant="20" id="TcX-uU-QVm"/>
+                            <constraint firstItem="4XT-dL-bZp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="a7t-4f-uCr"/>
+                            <constraint firstItem="4XT-dL-bZp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gyo-i1-MYw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Main" id="wZZ-MA-gRL">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Iti-Ps-hW5">
+                            <connections>
+                                <segue destination="Dp9-mE-U14" kind="show" id="Ixv-ck-gNP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="songPicker" destination="jT2-UI-tOJ" id="dyG-ry-KWV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1160.8695652173915" y="770.75892857142856"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="1YM-nG-g1o">
+            <objects>
+                <viewController id="Dp9-mE-U14" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6XZ-3F-VUP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GzU-ck-GM8">
+                                <rect key="frame" x="345" y="215" width="51" height="31"/>
+                                <color key="onTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Efects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8c-hC-PjQ">
+                                <rect key="frame" x="20" y="220" width="305" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKB-Rg-bf2">
+                                <rect key="frame" x="20" y="271" width="305" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lf-2O-cNc">
+                                <rect key="frame" x="345" y="266" width="51" height="31"/>
+                                <color key="onTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PKB-Rg-bf2" firstAttribute="top" secondItem="Q8c-hC-PjQ" secondAttribute="bottom" constant="30" id="2oq-Rp-ftp"/>
+                            <constraint firstItem="PKB-Rg-bf2" firstAttribute="leading" secondItem="39b-Zv-uXu" secondAttribute="leading" constant="20" id="GlC-bU-ER8"/>
+                            <constraint firstItem="GzU-ck-GM8" firstAttribute="leading" secondItem="Q8c-hC-PjQ" secondAttribute="trailing" constant="20" id="JkH-8q-Lvd"/>
+                            <constraint firstItem="39b-Zv-uXu" firstAttribute="trailing" secondItem="GzU-ck-GM8" secondAttribute="trailing" constant="20" id="QR8-Za-OK5"/>
+                            <constraint firstItem="Q8c-hC-PjQ" firstAttribute="leading" secondItem="39b-Zv-uXu" secondAttribute="leading" constant="20" id="UlA-Cy-f30"/>
+                            <constraint firstItem="GzU-ck-GM8" firstAttribute="centerY" secondItem="Q8c-hC-PjQ" secondAttribute="centerY" id="Z6V-UB-6Of"/>
+                            <constraint firstItem="39b-Zv-uXu" firstAttribute="trailing" secondItem="1lf-2O-cNc" secondAttribute="trailing" constant="20" id="hWK-Ax-Xpn"/>
+                            <constraint firstItem="Q8c-hC-PjQ" firstAttribute="top" secondItem="39b-Zv-uXu" secondAttribute="top" constant="80" id="m6O-GA-V8D"/>
+                            <constraint firstItem="1lf-2O-cNc" firstAttribute="centerY" secondItem="PKB-Rg-bf2" secondAttribute="centerY" id="uqZ-gb-75V"/>
+                            <constraint firstItem="1lf-2O-cNc" firstAttribute="leading" secondItem="PKB-Rg-bf2" secondAttribute="trailing" constant="20" id="yeR-fa-DKl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="39b-Zv-uXu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="dA8-Sx-SNT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fiu-b5-eFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2000" y="771"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ScM-Hg-agf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s7N-YW-Bdv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="3sR-hL-c84">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kqh-ry-hbt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Yo-0N-fab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366.66666666666669" y="771.42857142857144"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
 </document>

@@ -10,24 +10,50 @@ import XCTest
 @testable import SoundKit
 
 class SoundKitTests: XCTestCase {
+    
+    // MARK: - Method Teardown
+    // ------------------------------------------------------------
+    
+    var soundManager: SoundManager!
+    var testBundle: Bundle!
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        soundManager = SoundManager()
+        testBundle = Bundle(for: type(of: self))
+
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        soundManager.stopSound()
+        soundManager.stopMusic()
+        soundManager = nil
+        super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: - Test Methods
+    // ------------------------------------------------------------
+    
+    func testAllows() {
+        XCTAssertTrue(soundManager.allowsSound)
+        XCTAssertTrue(soundManager.allowsMusic)
+        
+        soundManager.allowsSound = false
+        soundManager.allowsMusic = false
+        
+        XCTAssertFalse(soundManager.allowsSound)
+        XCTAssertFalse(soundManager.allowsMusic)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testplaySound() {
+        let url = testBundle.url(forResource: "songA.m4a", withExtension: nil)
+        XCTAssertNotNil(url)
+        
+        measure {
+            XCTAssertFalse(soundManager.isPlayingSound())
+            soundManager.playSound(url: url!)
+            XCTAssertTrue(soundManager.isPlayingSound())
         }
     }
 
